@@ -1,0 +1,16 @@
+{
+  "name": "vizchange-smhi",
+  "version": "1.0.0",
+  "description": "request smhi data from api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "request",
+    "smhi"
+  ],
+  "author": "Nicklas Sundin Johansson",
+  "license": "ISC"
+}
