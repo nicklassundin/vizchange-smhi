@@ -1,6 +1,6 @@
 {
   "name": "vizchange-smhi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "request smhi data from api",
   "main": "app.js",
   "scripts": {
