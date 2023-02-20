@@ -28,6 +28,7 @@ class Stations {
                 if(param === undefined || each.key === PARAMS[param].id){
                     each.station.forEach(station => {
                         if(stations[station.id] === undefined) stations[station.id] = {}
+                        stations[station.id].id = station.id;
                         stations[station.id].name = station.name
                         stations[station.id].longitude = station.longitude
                         stations[station.id].latitude = station.latitude
@@ -36,7 +37,7 @@ class Stations {
                     })
                 }
             })
-            return stations
+            return Object.values(stations)
         })
     }
 }
