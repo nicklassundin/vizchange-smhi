@@ -4,7 +4,7 @@
   "description": "request smhi data from api",
   "main": "app.js",
   "scripts": {
-    "test": "" 
+    "test": "mocha './*.spec.js' --delay"
   },
   "keywords": [
     "api",
@@ -14,6 +14,7 @@
   "author": "Nicklas Sundin Johansson",
   "license": "ISC",
   "dependencies": {
+    "mocha": "^10.2.0",
     "request": "^2.88.2"
   }
 }

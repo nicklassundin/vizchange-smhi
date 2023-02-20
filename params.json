@@ -1,0 +1,10 @@
+{
+  "temperature": {
+    "id": 1,
+    "url": "https://opendata-download-metobs.smhi.se/api/version/latest/parameter/1.json"
+  },
+  "perception": {
+    "id": 5,
+    "url": "https://opendata-download-metobs.smhi.se/api/version/latest/parameter/5.json"
+  }
+}
