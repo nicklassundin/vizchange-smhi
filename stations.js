@@ -30,6 +30,7 @@ class Stations {
                         if(stations[station.id] === undefined) stations[station.id] = {}
                         stations[station.id].id = station.id;
                         stations[station.id].name = station.name
+                        stations[station.id].formatedName = station.name.replace(' ', '-');
                         stations[station.id].longitude = station.longitude
                         stations[station.id].latitude = station.latitude
                         if(stations[station.id].params === undefined) stations[station.id].params = {}
