@@ -1,10 +1,17 @@
 {
-  "temperature": {
-    "id": 1,
-    "url": "https://opendata-download-metobs.smhi.se/api/version/latest/parameter/1.json"
+  "url": "https://opendata-download-metobs.smhi.se/api/version/latest/parameter/[PARAMS].json",
+  "map": {
+    "temperature": 1,
+    "avg_temperature": 2,
+    "min_temperature": 19,
+    "max_temperature": 20,
+    "precipitation": 5
   },
-  "perception": {
-    "id": 5,
-    "url": "https://opendata-download-metobs.smhi.se/api/version/latest/parameter/5.json"
+  "reverse": {
+    "1": "temperature",
+    "2": "avg_temperature",
+    "19": "min_temperature",
+    "20": "max_temperature",
+    "5": "precipitation"
   }
 }

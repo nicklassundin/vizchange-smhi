@@ -6,10 +6,10 @@ class Stations {
     }
     get paramsRequests () {
         let requests = []
-        Object.values(PARAMS).forEach((value) => {
+        Object.values(PARAMS.map).forEach((value) => {
             requests.push(new Promise((resolve, reject) => {
                 request({
-                    "url": value.url,
+                    "url": PARAMS.url.replace('[PARAMS]', value),
                     "json": true,
                     "path": "/",
                     "method": "GET"
@@ -21,24 +21,24 @@ class Stations {
         })
         return Promise.all(requests);
     }
-    getStations (param) {
+    getStations () {
         return this.paramsRequests.then((response) => {
             let stations = {}
             response.forEach(each => {
-                if(param === undefined || each.key === PARAMS[param].id){
-                    each.station.forEach(station => {
-                        if(stations[station.id] === undefined) stations[station.id] = {}
-                        stations[station.id].id = station.id;
-                        stations[station.id].name = station.name
-                        stations[station.id].formatedName = station.name.replace(' ', '-');
-                        stations[station.id].longitude = station.longitude
-                        stations[station.id].latitude = station.latitude
-                        if(stations[station.id].params === undefined) stations[station.id].params = {}
-                        stations[station.id].params[each.key] = station
-                    })
-                }
+                each.station.forEach(station => {
+                    if(stations[station.id] === undefined) stations[station.id] = {}
+                    stations[station.id].id = station.id;
+                    stations[station.id].name = station.name
+                    stations[station.id].formatedName = station.name.replace(' ', '-');
+                    stations[station.id].longitude = station.longitude
+                    stations[station.id].latitude = station.latitude
+                    if(stations[station.id].params === undefined) {
+                        stations[station.id].params = {}
+                    }
+                    stations[station.id].params[each.key] = station
+                })
             })
-            return Object.values(stations)
+            return Object.values(stations).filter(each => Object.keys(each.params).length > 3)
         })
     }
 }
