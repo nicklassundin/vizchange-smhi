@@ -33,9 +33,9 @@ class Stations {
                     stations[station.id].longitude = station.longitude
                     stations[station.id].latitude = station.latitude
                     if(stations[station.id].params === undefined) {
-                        stations[station.id].params = {}
+                        stations[station.id].params = [];
                     }
-                    stations[station.id].params[each.key] = station
+                    stations[station.id].params.push(PARAMS.reverse[each.key])
                 })
             })
             return Object.values(stations).filter(each => Object.keys(each.params).length > 3)
